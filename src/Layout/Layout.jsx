@@ -1,3 +1,4 @@
+import BottomBar from "../Components/BottomBar";
 import Navbar from "../Components/Navbar";
 
 const Layout = ({ children }) => {
@@ -5,6 +6,7 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       {children}
+      <BottomBar />
     </>
   );
 };
