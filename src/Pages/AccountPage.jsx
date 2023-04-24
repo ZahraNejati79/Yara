@@ -1,5 +1,7 @@
+import Layout from "../Layout/Layout";
+
 const AccountPage = () => {
-  return <div>account page</div>;
+  return <Layout>account page</Layout>;
 };
 
 export default AccountPage;

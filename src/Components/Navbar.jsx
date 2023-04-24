@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [clickBottomIcon, setClickBottomIcon] = useState(0);
@@ -31,12 +32,14 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden md:flex ml-4 gap-x-4 items-center justify-center">
-            <IconButton className="flex flex-col items-center justify-center">
-              <ChatBubbleOutline className="text-3xl font-bold text-textPrimary" />
-              <Typography className="text-lg  text-textPrimary">
-                گفتوگو
-              </Typography>
-            </IconButton>
+            <Link to="/account/chat">
+              <IconButton className="flex flex-col items-center justify-center">
+                <ChatBubbleOutline className="text-3xl font-bold text-textPrimary" />
+                <Typography className="text-lg  text-textPrimary">
+                  گفتوگو
+                </Typography>
+              </IconButton>
+            </Link>
             <IconButton
               onClick={() => setProfileMenu(true)}
               className="flex flex-col items-center justify-center"
@@ -47,7 +50,9 @@ const Navbar = () => {
               </Typography>
             </IconButton>
             <Menu onClose={handleClose} open={profileMenu}>
-              <MenuItem onClick={handleClose}>پروفایل</MenuItem>
+              <Link to="/account">
+                <MenuItem onClick={handleClose}>پروفایل</MenuItem>
+              </Link>
               <MenuItem onClick={handleClose}>سفارشات</MenuItem>
               <MenuItem onClick={handleClose}>خزوج از حساب کاربری</MenuItem>
             </Menu>
@@ -76,16 +81,18 @@ const Navbar = () => {
             مدیریت مزون
           </Typography>
 
-          <Typography
-            onClick={() => setClickBottomIcon(3)}
-            className={
-              clickBottomIcon === 3
-                ? "text-primary text-xl font-bold cursor-pointer"
-                : "text-xl font-bold cursor-pointer text-textPrimary"
-            }
-          >
-            مزون گردی
-          </Typography>
+          <Link to="/discovery">
+            <Typography
+              onClick={() => setClickBottomIcon(3)}
+              className={
+                clickBottomIcon === 3
+                  ? "text-primary text-xl font-bold cursor-pointer"
+                  : "text-xl font-bold cursor-pointer text-textPrimary"
+              }
+            >
+              مزون گردی
+            </Typography>
+          </Link>
         </Toolbar>
       </Toolbar>
     </AppBar>
