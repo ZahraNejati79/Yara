@@ -1,7 +1,7 @@
 import Layout from "../Layout/Layout";
 
-const SignUp = () => {
+const SignUpPage = () => {
   return <Layout>signUp page</Layout>;
 };
 
-export default SignUp;
+export default SignUpPage;

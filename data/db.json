@@ -1,0 +1,47 @@
+{
+  "mesons": [
+    {
+      "id": 1,
+      "name": "some comment",
+      "postId": 1
+    }
+  ],
+  "dresses": [
+    {
+      "id": 1,
+      "mesonId": 2,
+      "title": "Bahar",
+      "url": "typicode",
+      "descripteon": "لباس عروس بلند استین پفی",
+      "price": "2500",
+      "type": "",
+      "size": "[s,md,lg]"
+    },
+    {
+      "id": 2,
+      "mesonId": 2,
+      "title": "Bahar",
+      "url": "typicode",
+      "descripteon": "لباس عروس بلند استین پفی",
+      "price": "2500",
+      "type": "",
+      "size": "[s,md,lg]"
+    },
+    {
+      "id": 3,
+      "mesonId": 2,
+      "title": "Bahar",
+      "url": "typicode",
+      "descripteon": "لباس عروس بلند استین پفی",
+      "price": "2500",
+      "type": "",
+      "size": "[s,md,lg]"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "auth": "true",
+    "name": "typicode",
+    "phoneNumber": "09333430230"
+  }
+}

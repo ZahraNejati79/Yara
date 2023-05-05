@@ -3,8 +3,8 @@ import "./App.css";
 import HomePage from "./Pages/HomePage";
 import AccountPage from "./Pages/AccountPage";
 import DiscoveryPage from "./Pages/DiscoveryPage";
-import SignUp from "./Pages/SignUp";
-import LogIn from "./Pages/Login";
+import LogInPage from "./Pages/LogInPage";
+import SignUpPage from "./Pages/SignUpPage";
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
           <Route path="/account" element={<AccountPage />} />
           <Route path="/account/chat" element={<AccountPage />} />
           <Route path="/discovery" element={<DiscoveryPage />} />
-          <Route path="/logIn" element={<LogIn />} />
-          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/logIn" element={<LogInPage />} />
+          <Route path="/SignUp" element={<SignUpPage />} />
         </Routes>
       </BrowserRouter>
     </div>
