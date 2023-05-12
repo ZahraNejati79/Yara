@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      {children}
+      <main className="mt-20 lg:mt-40">{children}</main>
       <BottomBar />
     </>
   );
