@@ -18,20 +18,22 @@ const Navbar = () => {
   };
   return (
     <AppBar className="bg-white flex items-center justify-center ">
-      <Toolbar className="container md:mx-8 flex flex-col  ">
+      <Toolbar className="container md:mx-8 flex lg:flex-col  ">
         <div className="flex items-center justify-between w-full">
           <div className="w-full flex items-center justify-start">
-            <div className="text-3xl font-bold italic text-primary">YaRa</div>
-            <div className="mr-8 bg-secondary border-spacing-1 px-2 py-3 rounded-md min-w-max md:w-1/2 hover:opacity-90">
+            <div className="text-xl md:text-2 lg:text-3xl font-bold italic text-primary">
+              YaRa
+            </div>
+            <div className="mr-8 bg-secondary border-spacing-1 px-2 py-1 md:py-2 lg:py-3 rounded-md min-w-max w-2/3 md:w-1/2 hover:opacity-90">
               <Search className="text-textSecondary ml-2" />
               <input
                 type="text"
-                className="outline-none  text-textPrimary bg-secondary   "
-                placeholder="جستوجو در مزون ها"
+                className="outline-none  text-textPrimary bg-secondary text-sm md:text-lg  "
+                placeholder="جستجو در مزون ها"
               />
             </div>
           </div>
-          <div className="hidden md:flex ml-4 gap-x-4 items-center justify-center">
+          <div className="hidden lg:flex ml-4 gap-x-4 items-center justify-center">
             <Link to="/account/chat">
               <IconButton className="flex flex-col items-center justify-center">
                 <ChatBubbleOutline className="text-3xl font-bold text-textPrimary" />
@@ -58,7 +60,7 @@ const Navbar = () => {
             </Menu>
           </div>
         </div>
-        <Toolbar className="hidden md:flex  items-center justify-start w-full gap-x-8 ">
+        <Toolbar className="hidden lg:flex  items-center justify-start w-full gap-x-8 ">
           <Typography
             onClick={() => setClickBottomIcon(1)}
             className={

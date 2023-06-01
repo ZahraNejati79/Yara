@@ -5,6 +5,7 @@ import AccountPage from "./Pages/AccountPage";
 import DiscoveryPage from "./Pages/DiscoveryPage";
 import LogInPage from "./Pages/LogInPage";
 import SignUpPage from "./Pages/SignUpPage";
+import DressDetailPage from "./Pages/DressDetailPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/account" element={<AccountPage />} />
           <Route path="/account/chat" element={<AccountPage />} />
           <Route path="/discovery" element={<DiscoveryPage />} />
+          <Route path="/discovery/:dressId" element={<DressDetailPage />} />
           <Route path="/logIn" element={<LogInPage />} />
           <Route path="/SignUp" element={<SignUpPage />} />
         </Routes>

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const BottomBar = () => {
   const [clickBottomIcon, setClickBottomIcon] = useState(0);
   return (
-    <AppBar className=" fixed top-auto bottom-0 bg-white text-textSecondary flex items-center justify-center md:hidden ">
+    <AppBar className=" fixed top-auto bottom-0 bg-white text-textSecondary flex items-center justify-center lg:hidden ">
       <Toolbar className="w-full flex items-center justify-between gap-x-5 ">
         <Link to="/">
           <IconButton
