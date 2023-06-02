@@ -10,6 +10,7 @@ module.exports = {
       textPrimary: "#282828",
       textSecondary: "#6b7280",
       "text-base": "white",
+      borderColor: "#e1e1e1",
     },
     extend: {},
   },

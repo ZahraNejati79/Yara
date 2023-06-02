@@ -17,8 +17,8 @@ function App() {
           <Route path="/account/chat" element={<AccountPage />} />
           <Route path="/discovery" element={<DiscoveryPage />} />
           <Route path="/discovery/:dressId" element={<DressDetailPage />} />
-          <Route path="/logIn" element={<LogInPage />} />
-          <Route path="/SignUp" element={<SignUpPage />} />
+          <Route path="/login" element={<LogInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
         </Routes>
       </BrowserRouter>
     </div>
