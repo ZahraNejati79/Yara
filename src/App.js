@@ -6,6 +6,7 @@ import DiscoveryPage from "./Pages/DiscoveryPage";
 import LogInPage from "./Pages/LogInPage";
 import SignUpPage from "./Pages/SignUpPage";
 import DressDetailPage from "./Pages/DressDetailPage";
+import CreateMezonPage from "./Pages/CreateMezonPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/account/chat" element={<AccountPage />} />
           <Route path="/discovery" element={<DiscoveryPage />} />
           <Route path="/discovery/:dressId" element={<DressDetailPage />} />
+          <Route path="/create-mezon" element={<CreateMezonPage />} />
           <Route path="/login" element={<LogInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
         </Routes>
