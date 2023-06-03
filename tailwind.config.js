@@ -11,6 +11,7 @@ module.exports = {
       textSecondary: "#6b7280",
       "text-base": "white",
       borderColor: "#e1e1e1",
+      error: "#e70000",
     },
     extend: {},
   },
