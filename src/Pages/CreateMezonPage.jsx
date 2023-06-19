@@ -1,6 +1,5 @@
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import CreateMezon from "../Components/CreateMezon";
+import CreateMezon from "../Components/CreateMezon/CreateMezon";
 
 const CreateMezonPage = () => {
   return (
