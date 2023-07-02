@@ -25,7 +25,7 @@ const SelectedCities = () => {
             ></div>
 
             <div className="absolute inset-x-0 w-full max-w-lg px-4 mx-auto bg-white rounded-md shadow-lg p-4 content-center">
-              <div className="h-[29rem] min-h-40 overflow-y-auto no-scrollbar mt-4 bg-white">
+              <div className="max-h-[38rem] min-h-40 overflow-y-auto no-scrollbar mt-4 bg-white">
                 <ProvinceList setShowModal={setShowModal} />
               </div>
             </div>

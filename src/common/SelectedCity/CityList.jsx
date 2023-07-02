@@ -1,5 +1,6 @@
 import { ArrowForward } from "@mui/icons-material";
 import React from "react";
+import SearchBox from "../SearchBox";
 
 function CityList({
   setSelectedProvince,
@@ -18,31 +19,36 @@ function CityList({
   };
   console.log(province);
   return (
-    <div className="modal">
+    <div className="modal mx-8">
       <div className="sticky top-0 bg-white pb-4">
-        <div
-          onClick={() => setSelectedProvince(null)}
-          className="w-full cursor-pointer mb-2"
-        >
-          <ArrowForward />
+        <div className="flex flex-col items-start justify-center gap-2">
+          <div
+            onClick={() => setSelectedProvince(null)}
+            className="w-full cursor-pointer mb-2"
+          >
+            <ArrowForward />
+          </div>
+          <h2 className="mb-2">
+            شهرهای استان{" "}
+            <span className="text-primary font-bold">{province.province}</span>
+          </h2>
+          <SearchBox label="شهرها" />
         </div>
-        <h2>
-          لیست شهرهای{" "}
-          <span className="text-primary font-bold">{province.province}</span>
-        </h2>
       </div>
-      {province.cities.map((city) => (
-        <div className="flex items-center justify-between mx-8 p-4 border-b border-borderColor">
-          <label className="flex items-center justify-start gap-2 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={selectedCities.some((c) => c === city)}
-              onChange={(e) => handleCityChange(e, city)}
-            />
-            {city}
-          </label>
-        </div>
-      ))}
+      <div className="min-h-[20rem]">
+        {province.cities.map((city) => (
+          <div className="flex items-center justify-between  p-4 ">
+            <label className="flex items-center justify-start gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={selectedCities.some((c) => c === city)}
+                onChange={(e) => handleCityChange(e, city)}
+              />
+              {city}
+            </label>
+          </div>
+        ))}
+      </div>
       <div className="bg-white sticky bottom-0 ">
         <div className="items-center gap-2 mt-3 sm:flex ">
           <button

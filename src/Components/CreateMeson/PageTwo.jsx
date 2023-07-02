@@ -1,7 +1,6 @@
 import { useFormik } from "formik";
 import Input from "../../common/Input";
 import * as Yup from "yup";
-import SelectCity from "../../common/SelectedCity/SelectCity";
 import SelectedCities from "../../common/SelectedCity/SelectedCities";
 
 const initialValues = {
@@ -30,7 +29,7 @@ const PageTwo = () => {
   return (
     <section className="mt-8 w-full md:w-9/12 bg-white border border-borderColor rounded-lg p-4 flex flex-col  items-center justify-center pb-8 px-8 mx-4 gap-4 ">
       <h1 className="mb-8 font-bold text-lg">اطلاعات اولیه</h1>
-      <div className="w-full flex flex-col md:flex-row items-start justify-between px-16">
+      <div className="w-full flex flex-col xl:flex-row gap-8 items-start justify-between px-16">
         <form
           className="flex flex-col items-start justify-center gap-4"
           action="text"

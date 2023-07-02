@@ -1,4 +1,4 @@
-export const provinces = [
+export const provincesFile = [
   {
     province: "آذربايجان شرقي",
     cities: [

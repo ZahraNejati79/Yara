@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import CreateMezon from "../Components/CreateMezon/CreateMezon";
+import CreateMeson from "../Components/CreateMeson/CreateMeson";
 
-const CreateMezonPage = () => {
+const CreateMesonPage = () => {
   return (
     <main className="w-full container flex flex-col items-center justify-center pt-8 ">
       <header className="w-full md:w-9/12 bg-white border border-borderColor rounded-lg p-4 flex items-center justify-between px-8 mx-4">
@@ -14,9 +14,9 @@ const CreateMezonPage = () => {
           </button>
         </Link>
       </header>
-      <CreateMezon />
+      <CreateMeson />
     </main>
   );
 };
 
-export default CreateMezonPage;
+export default CreateMesonPage;

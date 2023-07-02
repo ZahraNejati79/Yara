@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CityList from "./CityList";
-import { provinces } from "../../province";
+import { provincesFile } from "../../province";
+import SearchBox from "../SearchBox";
 // const provinces = [
 //   {
 //     id: 1,
@@ -35,6 +36,7 @@ import { provinces } from "../../province";
 // ];
 
 function ProvinceList({ setShowModal }) {
+  const [provinces, setProvinces] = useState(provincesFile);
   const [selectedProvince, setSelectedProvince] = useState(null);
   const [selectedCities, setSelectedCities] = useState([]);
 
@@ -72,10 +74,20 @@ function ProvinceList({ setShowModal }) {
           onSubmit={handleSubmit}
         />
       ) : (
-        <div>
-          <h2>لیست استان‌ها</h2>
+        <div className="mx-8">
+          <div className="flex flex-col items-start justify-center gap-2">
+            <h1 className="font-bold mb-3">استان و شهر مزون‌دار</h1>
+            <h2 className="text-textSecondary text-sm mb-2">
+              استان مورد نظر خود را انتخاب کنید
+            </h2>
+            <SearchBox
+              words={provinces}
+              setWord={setProvinces}
+              label="استان‌ها"
+            />
+          </div>
           {provinces.map((province) => (
-            <div className="cursor-pointer flex items-center justify-between mx-8 p-4 border-b border-borderColor">
+            <div className="cursor-pointer flex items-center justify-between  p-4 border-b border-borderColor">
               <button onClick={() => handleProvinceClick(province)}>
                 {province.province}
               </button>
