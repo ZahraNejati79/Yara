@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../Layout/Layout";
-import { fetchAsyncMesons, getAllMesons } from "../Features/Meson/mesonSlice";
+import { fetchMeson, getAllMesons } from "../Features/Meson/mesonSlice";
 import { useEffect } from "react";
 import {
   Card,
@@ -15,7 +15,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAsyncMesons());
+    dispatch(fetchMeson());
   }, [dispatch]);
 
   return (

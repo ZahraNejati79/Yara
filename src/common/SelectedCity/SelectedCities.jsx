@@ -2,8 +2,10 @@ import ProvinceList from "./ProvinceList";
 import { useState } from "react";
 import { provinces } from "../../province";
 import { ArrowForward, KeyboardArrowDown, Search } from "@mui/icons-material";
-const SelectedCities = () => {
+import { useFormikContext } from "formik";
+const SelectedCities = ({ handleSetCity }) => {
   const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <div
@@ -26,7 +28,10 @@ const SelectedCities = () => {
 
             <div className="absolute inset-x-0 w-full max-w-lg px-4 mx-auto bg-white rounded-md shadow-lg p-4 content-center">
               <div className="max-h-[38rem] min-h-40 overflow-y-auto no-scrollbar mt-4 bg-white">
-                <ProvinceList setShowModal={setShowModal} />
+                <ProvinceList
+                  handleSetCity={handleSetCity}
+                  setShowModal={setShowModal}
+                />
               </div>
             </div>
           </div>

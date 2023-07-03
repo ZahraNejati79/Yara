@@ -17,7 +17,7 @@ function CityList({
       onCityDeselect(city);
     }
   };
-  console.log(province);
+
   return (
     <div className="modal mx-8">
       <div className="sticky top-0 bg-white pb-4">

@@ -1,4 +1,4 @@
-import { useFormik } from "formik";
+import { useFormik, useFormikContext } from "formik";
 import Input from "../../common/Input";
 import * as Yup from "yup";
 import SelectedCities from "../../common/SelectedCity/SelectedCities";
@@ -7,6 +7,7 @@ const initialValues = {
   name: "",
   internetAddress: "",
   city: [],
+  agreements: false,
 };
 
 const PageTwo = () => {
@@ -26,11 +27,17 @@ const PageTwo = () => {
     }),
     validateOnMount: true,
   });
+
+  const handleSetCity = (selectedCity) => {
+    formik.setFieldValue("city", selectedCity);
+  };
+  console.log(formik.values);
   return (
     <section className="mt-8 w-full md:w-9/12 bg-white border border-borderColor rounded-lg p-4 flex flex-col  items-center justify-center pb-8 px-8 mx-4 gap-4 ">
       <h1 className="mb-8 font-bold text-lg">اطلاعات اولیه</h1>
       <div className="w-full flex flex-col xl:flex-row gap-8 items-start justify-between px-16">
         <form
+          onSubmit={formik.handleSubmit}
           className="flex flex-col items-start justify-center gap-4"
           action="text"
         >
@@ -44,21 +51,25 @@ const PageTwo = () => {
             name="internetAddress"
             label="آدرس اینترنتی مزونت چی باشه؟"
           />
-          <SelectedCities />
+          <SelectedCities handleSetCity={handleSetCity} />
           <div className="w-72 md:w-96">
             <input
+              id="agreements"
+              name="agreements"
+              onChange={formik.handleChange}
+              value={formik.values.agreements}
               className="m-2"
               type="checkbox"
-              id="vehicle1"
-              name="vehicle1"
-              value="Bike"
             />
-            <label for="vehicle1">
+            <label for="agreements">
               قوانین و مقررات مزون‌داری را مطالعه نموده و همه موارد آن را
               میپذیرم.
             </label>
           </div>
-          <button className="w-full py-2 bg-primary rounded-lg text-white disabled:bg-[#bdbdbd] mt-4">
+          <button
+            type="submit"
+            className="w-full py-2 bg-primary rounded-lg text-white disabled:bg-[#bdbdbd] mt-4"
+          >
             تایید و ادامه
           </button>
         </form>

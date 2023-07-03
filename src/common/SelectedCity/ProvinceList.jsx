@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import CityList from "./CityList";
 import { provincesFile } from "../../province";
 import SearchBox from "../SearchBox";
+import { useFormik, useFormikContext } from "formik";
+
 // const provinces = [
 //   {
 //     id: 1,
@@ -35,7 +37,8 @@ import SearchBox from "../SearchBox";
 //   },
 // ];
 
-function ProvinceList({ setShowModal }) {
+function ProvinceList({ setShowModal, handleSetCity }) {
+  // const { setFieldValue } = useFormikContext();
   const [provinces, setProvinces] = useState(provincesFile);
   const [selectedProvince, setSelectedProvince] = useState(null);
   const [selectedCities, setSelectedCities] = useState([]);
@@ -57,6 +60,7 @@ function ProvinceList({ setShowModal }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(selectedCities);
+    handleSetCity(selectedCities);
     setSelectedProvince(null);
     setSelectedCities([]);
     setShowModal(false);
