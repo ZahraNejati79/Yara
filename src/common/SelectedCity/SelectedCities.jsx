@@ -1,9 +1,7 @@
 import ProvinceList from "./ProvinceList";
 import { useState } from "react";
-import { provinces } from "../../province";
-import { ArrowForward, KeyboardArrowDown, Search } from "@mui/icons-material";
-import { useFormikContext } from "formik";
-const SelectedCities = ({ handleSetCity }) => {
+
+const SelectedCities = ({ handleSetCity, cities, formik }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -12,11 +10,14 @@ const SelectedCities = ({ handleSetCity }) => {
         onClick={() => setShowModal(true)}
         className="gap-2 flex flex-col items-start justify-center "
       >
-        <label htmlFor="search">جستوجو</label>
+        <label htmlFor="search">چه شهرایی هستید؟</label>
         <input
-          name="search"
+          {...formik.getFieldProps("city")}
           className="outline-none w-72 md:w-96 bg-gray-50 border border-borderColor text-textPrimary text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5"
         />
+        {formik.errors.city && formik.touched.city && (
+          <div className="text-xs text-error mt-2">{formik.errors.city}</div>
+        )}
       </div>
       {showModal ? (
         <div>

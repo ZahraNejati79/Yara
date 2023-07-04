@@ -37,7 +37,7 @@ function CityList({
       </div>
       <div className="min-h-[20rem]">
         {province.cities.map((city) => (
-          <div className="flex items-center justify-between  p-4 ">
+          <div key={city} className="flex items-center justify-between  p-4 ">
             <label className="flex items-center justify-start gap-2 cursor-pointer">
               <input
                 type="checkbox"

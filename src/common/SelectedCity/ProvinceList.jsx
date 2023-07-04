@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import CityList from "./CityList";
 import { provincesFile } from "../../province";
 import SearchBox from "../SearchBox";
-import { useFormik, useFormikContext } from "formik";
 
 // const provinces = [
 //   {
@@ -38,7 +37,6 @@ import { useFormik, useFormikContext } from "formik";
 // ];
 
 function ProvinceList({ setShowModal, handleSetCity }) {
-  // const { setFieldValue } = useFormikContext();
   const [provinces, setProvinces] = useState(provincesFile);
   const [selectedProvince, setSelectedProvince] = useState(null);
   const [selectedCities, setSelectedCities] = useState([]);
@@ -59,13 +57,12 @@ function ProvinceList({ setShowModal, handleSetCity }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(selectedCities);
     handleSetCity(selectedCities);
     setSelectedProvince(null);
     setSelectedCities([]);
     setShowModal(false);
   };
-  console.log(selectedProvince);
+
   return (
     <div>
       {selectedProvince ? (
@@ -91,7 +88,10 @@ function ProvinceList({ setShowModal, handleSetCity }) {
             />
           </div>
           {provinces.map((province) => (
-            <div className="cursor-pointer flex items-center justify-between  p-4 border-b border-borderColor">
+            <div
+              key={province.province}
+              className="cursor-pointer flex items-center justify-between  p-4 border-b border-borderColor"
+            >
               <button onClick={() => handleProvinceClick(province)}>
                 {province.province}
               </button>
