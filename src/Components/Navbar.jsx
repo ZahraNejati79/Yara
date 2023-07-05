@@ -12,10 +12,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [clickBottomIcon, setClickBottomIcon] = useState(0);
-  const [profileMenu, setProfileMenu] = useState(false);
-  const handleClose = () => {
-    setProfileMenu(false);
-  };
+
   return (
     <AppBar className="bg-white flex items-center justify-center ">
       <Toolbar className="container md:mx-8 flex lg:flex-col  ">
@@ -42,22 +39,14 @@ const Navbar = () => {
                 </Typography>
               </IconButton>
             </Link>
-            <IconButton
-              onClick={() => setProfileMenu(true)}
-              className="flex flex-col items-center justify-center"
-            >
-              <PermIdentity className="text-3xl font-bold text-textPrimary" />
-              <Typography className="text-lg text-textPrimary">
-                پروفایل
-              </Typography>
-            </IconButton>
-            <Menu onClose={handleClose} open={profileMenu}>
-              <Link to="/account">
-                <MenuItem onClick={handleClose}>پروفایل</MenuItem>
-              </Link>
-              <MenuItem onClick={handleClose}>سفارشات</MenuItem>
-              <MenuItem onClick={handleClose}>خزوج از حساب کاربری</MenuItem>
-            </Menu>
+            <Link to="/account">
+              <IconButton className="flex flex-col items-center justify-center">
+                <PermIdentity className="text-3xl font-bold text-textPrimary" />
+                <Typography className="text-lg text-textPrimary">
+                  پروفایل
+                </Typography>
+              </IconButton>
+            </Link>
           </div>
         </div>
         <Toolbar className="hidden lg:flex  items-center justify-start w-full gap-x-8 ">
