@@ -1,14 +1,7 @@
 import { ChatBubbleOutline, PermIdentity, Search } from "@mui/icons-material";
-import {
-  AppBar,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [clickBottomIcon, setClickBottomIcon] = useState(0);
@@ -31,22 +24,22 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden lg:flex ml-4 gap-x-4 items-center justify-center">
-            <Link to="/account/chat">
+            <NavLink to="/account/chat">
               <IconButton className="flex flex-col items-center justify-center">
                 <ChatBubbleOutline className="text-3xl font-bold text-textPrimary" />
                 <Typography className="text-lg  text-textPrimary">
                   گفتوگو
                 </Typography>
               </IconButton>
-            </Link>
-            <Link to="/account">
+            </NavLink>
+            <NavLink to="/account">
               <IconButton className="flex flex-col items-center justify-center">
                 <PermIdentity className="text-3xl font-bold text-textPrimary" />
                 <Typography className="text-lg text-textPrimary">
                   پروفایل
                 </Typography>
               </IconButton>
-            </Link>
+            </NavLink>
           </div>
         </div>
         <Toolbar className="hidden lg:flex  items-center justify-start w-full gap-x-8 ">
@@ -72,7 +65,7 @@ const Navbar = () => {
             مدیریت مزون
           </Typography>
 
-          <Link to="/discovery">
+          <NavLink to="/discovery">
             <Typography
               onClick={() => setClickBottomIcon(3)}
               className={
@@ -83,7 +76,7 @@ const Navbar = () => {
             >
               مزون گردی
             </Typography>
-          </Link>
+          </NavLink>
         </Toolbar>
       </Toolbar>
     </AppBar>
