@@ -35,7 +35,7 @@ const User = () => {
           <ReviewSection />
         </div>
       </section>
-      <section className="hidden md:flex bg-white p-4 text-lg">
+      <section className="hidden md:flex bg-white p-4 text-lg text">
         <div className="w-full">
           <div className="flex items-center justify-start gap-4 border-b border-b-borderColor pb-4">
             <div className="h-12 w-12 rounded-full bg-[#d8d8f7]"></div>

@@ -14,7 +14,11 @@ module.exports = {
       error: "#e70000",
       infoCard: "#e0f4fe",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Vazirmatn"],
+      },
+    },
   },
   plugins: [],
 };
