@@ -12,18 +12,21 @@ import {
 
 import NavigationItem from "../../common/NavigationItem";
 import ReviewSection from "../accountsPages/ReviewSection/ReviewSection";
+import { Link } from "react-router-dom";
 const User = () => {
   return (
-    <div className="grid grid-cols-[22rem_minmax(900px,_1fr)] gap-4 ">
-      <section className="order-1 flex flex-col gap-2 h-fit">
-        <div className="bg-white h-fit p-8">
-          <div className="md:hidden flex items-center justify-start gap-4 border-b border-b-borderColor pb-4 mb-4">
-            <div className="cursor-pointer ">
-              <ArrowForward />
+    <div className="flex  w-full flex-col justify-center xl:grid xl:grid-cols-[22rem_minmax(900px,_1fr)] xl:max-w-2xl gap-4 ">
+      <section className="order-1 flex flex-col gap-2 h-fit w-full">
+        <div className="bg-white h-fit p-8 w-full">
+          <Link to="/account">
+            <div className="md:hidden flex items-center justify-start gap-4 border-b border-b-borderColor pb-4 mb-4">
+              <div className="cursor-pointer ">
+                <ArrowForward />
+              </div>
+              <span>پروفایل عمومی</span>
             </div>
-            <span>پروفایل عمومی</span>
-          </div>
-          <div className="flex items-center justify-normal gap-4">
+          </Link>
+          <div className="flex items-center justify-start gap-4">
             <div className="w-20 h-20 rounded-full bg-[#d8d8f7]"></div>
             <span>زهرا نجاتی</span>
           </div>
@@ -35,7 +38,7 @@ const User = () => {
       <section className="hidden md:flex bg-white p-4 text-lg">
         <div className="w-full">
           <div className="flex items-center justify-start gap-4 border-b border-b-borderColor pb-4">
-            <div className="h-12 w-12 rounded-full bg-[#c8fbff]"></div>
+            <div className="h-12 w-12 rounded-full bg-[#d8d8f7]"></div>
             <span>زهرا نجاتی</span>
           </div>
           <ul className="border-b border-b-borderColor pb-4">

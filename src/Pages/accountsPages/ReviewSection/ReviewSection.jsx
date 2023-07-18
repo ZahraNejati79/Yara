@@ -4,6 +4,7 @@ import { Tab } from "@mui/material";
 import { useState } from "react";
 import Unreview from "./Unreview";
 import Review from "./Review";
+
 const ReviewSection = () => {
   const [tabvalue, setTabValue] = useState("1");
 
@@ -13,9 +14,13 @@ const ReviewSection = () => {
 
   return (
     <TabContext className="m-0" value={tabvalue}>
-      <TabList className="bg-white m-0 " onChange={handleChange}>
-        <Tab className="w-1/2 text-xl" label="در انتظار ثبت تجربه" value="1" />
-        <Tab className="w-1/2 text-xl" label="تجربه های ثبت شده" value="2" />
+      <TabList className="bg-white" onChange={handleChange}>
+        <Tab
+          className="w-1/2 md:text-xl"
+          label="در انتظار ثبت تجربه"
+          value="1"
+        />
+        <Tab className="w-1/2 md:text-xl" label="تجربه های ثبت شده" value="2" />
       </TabList>
       <TabPanel className="mt-2 p-0 " value="1">
         <Unreview />

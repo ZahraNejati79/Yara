@@ -35,7 +35,7 @@ const BottomBar = () => {
             <Typography>گفتوگو</Typography>
           </IconButton>
         </Link>
-        <Link to="/account">
+        <Link to="/profile">
           <IconButton
             onClick={() => setClickBottomIcon(4)}
             className="flex flex-col items-center justify-center"

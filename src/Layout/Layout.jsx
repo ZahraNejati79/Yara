@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <div className="flex items-center justify-center mt-20 lg:mt-40">
-        <main className=" container flex items-center justify-center ">
+        <main className="container flex items-start justify-center ">
           {children}
         </main>
       </div>

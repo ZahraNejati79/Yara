@@ -32,7 +32,7 @@ const Navbar = () => {
                 </Typography>
               </IconButton>
             </NavLink>
-            <NavLink to="/account">
+            <NavLink to="/profile">
               <IconButton className="flex flex-col items-center justify-center">
                 <PermIdentity className="text-3xl font-bold text-textPrimary" />
                 <Typography className="text-lg text-textPrimary">

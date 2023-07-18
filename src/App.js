@@ -8,6 +8,7 @@ import DressDetailPage from "./Pages/DressDetailPage";
 import CreateMesonPage from "./Pages/CreateMesonPage";
 import ProfilePage from "./Pages/ProfilePage";
 import UserPage from "./Pages/UserPage";
+import AccountPage from "./Pages/AccountPage";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/account" element={<ProfilePage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/account" element={<AccountPage />} />
           <Route path="/user" element={<UserPage />} />
           <Route path="/discovery" element={<DiscoveryPage />} />
           <Route path="/discovery/:dressId" element={<DressDetailPage />} />
