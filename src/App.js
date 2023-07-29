@@ -9,6 +9,7 @@ import CreateMesonPage from "./Pages/CreateMesonPage";
 import ProfilePage from "./Pages/ProfilePage";
 import UserPage from "./Pages/UserPage";
 import AccountPage from "./Pages/AccountPage";
+import Dashboard from "./Pages/DashboardPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/discovery" element={<DiscoveryPage />} />
           <Route path="/discovery/:dressId" element={<DressDetailPage />} />
           <Route path="/create-mezon" element={<CreateMesonPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<LogInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
         </Routes>
