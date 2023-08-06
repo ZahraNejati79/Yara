@@ -1,19 +1,23 @@
 import { useFormik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../common/Input";
 import * as Yup from "yup";
-
-const initialValues = {
-  firstName: "",
-  lastName: "",
-  phoneNumber: "",
-  password: "",
-};
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { signupUser } from "../Features/Auth/authSlice";
+import { toast } from "react-toastify";
 
 const SignupForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [formInput, setFormInput] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    password: "",
+  });
   const formik = useFormik({
-    initialValues,
-    onSubmit: (values) => console.log(values),
+    initialValues: formInput,
     onBlure: (value) => console.log(value),
     validationSchema: Yup.object({
       firstName: Yup.string().required("اضافه کردن نام اجباری است  ):"),
@@ -31,11 +35,23 @@ const SignupForm = () => {
     }),
     validateOnMount: true,
   });
-
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(signupUser(formik.values));
+    setFormInput({
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      password: "",
+    });
+    formik.resetForm();
+    toast.success("ثبت نام شما با موفقیت انجام شد ");
+    navigate("/");
+  };
   return (
     <form
       className="mb-8 bg-white border border-borderColor rounded-lg p-8 flex flex-col items-center justify-center gap-4"
-      onSubmit={formik.handleSubmit}
+      onSubmit={submitHandler}
       action="text"
     >
       <h1 className="text-primary font-bold text-4xl italic">YaRa</h1>

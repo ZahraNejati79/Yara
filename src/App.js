@@ -11,6 +11,8 @@ import UserPage from "./Pages/UserPage";
 import AccountPage from "./Pages/AccountPage";
 import Dashboard from "./Pages/DashboardPage";
 import CreateProductPage from "./Pages/CreateProductPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </div>
   );
 }
