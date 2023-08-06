@@ -25,7 +25,7 @@ function App() {
           <Route path="/user" element={<UserPage />} />
           <Route path="/discovery" element={<DiscoveryPage />} />
           <Route path="/discovery/:dressId" element={<DressDetailPage />} />
-          <Route path="/create-mezon" element={<CreateMesonPage />} />
+          <Route path="/create-meson" element={<CreateMesonPage />} />
           <Route path="/create-product" element={<CreateProductPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<LogInPage />} />

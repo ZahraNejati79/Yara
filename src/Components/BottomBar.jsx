@@ -1,10 +1,13 @@
-import { Forum, Home, Person, Search } from "@mui/icons-material";
+import { Forum, Home, Login, Person, Search } from "@mui/icons-material";
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getUser } from "../Features/Auth/authSlice";
 
 const BottomBar = () => {
   const [clickBottomIcon, setClickBottomIcon] = useState(0);
+  const user = useSelector(getUser);
   return (
     <AppBar className=" fixed top-auto bottom-0 bg-white text-textSecondary flex items-center justify-center lg:hidden ">
       <Toolbar className="w-full flex items-center justify-between gap-x-5 ">
@@ -35,15 +38,27 @@ const BottomBar = () => {
             <Typography>گفتوگو</Typography>
           </IconButton>
         </Link>
-        <Link to="/profile">
-          <IconButton
-            onClick={() => setClickBottomIcon(4)}
-            className="flex flex-col items-center justify-center"
-          >
-            <Person className={clickBottomIcon === 4 && "text-primary"} />
-            <Typography>پروفایل</Typography>
-          </IconButton>
-        </Link>
+        {user.id ? (
+          <Link to="/profile">
+            <IconButton
+              onClick={() => setClickBottomIcon(4)}
+              className="flex flex-col items-center justify-center"
+            >
+              <Person className={clickBottomIcon === 4 && "text-primary"} />
+              <Typography>پروفایل</Typography>
+            </IconButton>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <IconButton
+              onClick={() => setClickBottomIcon(4)}
+              className="flex flex-col items-center justify-center"
+            >
+              <Login className={clickBottomIcon === 4 && "text-primary"} />
+              <Typography>ورود</Typography>
+            </IconButton>
+          </Link>
+        )}
       </Toolbar>
     </AppBar>
   );
