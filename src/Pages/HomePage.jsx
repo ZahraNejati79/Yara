@@ -1,50 +1,54 @@
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import Layout from "../Layout/Layout";
-import { fetchMeson, getAllMesons } from "../Features/Meson/mesonSlice";
-import { useEffect } from "react";
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const HomePage = () => {
-  const mesons = useSelector(getAllMesons);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchMeson());
-  }, [dispatch]);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 5000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
 
   return (
     <Layout>
-      <div className="grid grid-cols-4 gap-4">
-        {mesons.map((m) => {
-          return (
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea>
-                <CardMedia
-                  className="h-[20rem] "
-                  component="img"
-                  height="140"
-                  image={m.img}
-                  alt={m.name}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {m.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {`مزون بهار با `}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          );
-        })}
-      </div>
+      <section className="overflow-hidden">
+        <Slider {...settings}>
+          <div>
+            <img
+              src={require("../images/1.jpg")}
+              alt=""
+              className="md:w-5/6 mx-auto "
+            />
+          </div>
+          <div>
+            <img
+              src={require("../images/2.jpg")}
+              alt=""
+              className="md:w-5/6 mx-auto "
+            />
+          </div>
+          <div>
+            <img
+              src={require("../images/3.jpg")}
+              alt=""
+              className="md:w-5/6 mx-auto "
+            />
+          </div>
+          <div>
+            <img
+              src={require("../images/4.jpg")}
+              alt=""
+              className="md:w-5/6 mx-auto "
+            />
+          </div>
+        </Slider>
+      </section>
     </Layout>
   );
 };
