@@ -49,7 +49,7 @@ const Account = () => {
           <NavigationItem
             to="/account/addresses"
             icon={<LocationOn />}
-            label="تغییره موقعیت مکانی"
+            label="تغییر موقعیت مکانی"
           />
           <NavigationItem
             to="/account/settings"

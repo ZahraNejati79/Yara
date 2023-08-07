@@ -4,68 +4,36 @@
       "id": 1,
       "name": "زهرا",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl07.jpg",
-      "address": [
-        "isfahan",
-        "kashan"
-      ],
+      "address": ["isfahan", "kashan"],
       "postId": 1
     },
     {
       "id": 2,
       "name": "یاسی",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl20.jpg",
-      "address": [
-        "tehran",
-        ""
-      ],
+      "address": ["tehran", ""],
       "postId": 1
     },
     {
       "id": 3,
       "name": "بهار",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl23.jpg",
-      "address": [
-        "mashhad"
-      ],
+      "address": ["mashhad"],
       "postId": 1
     },
     {
       "id": 4,
       "name": "شبنم",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl24.jpg",
-      "address": [
-        "Tabris"
-      ],
+      "address": ["Tabris"],
       "postId": 1
     },
     {
       "id": 5,
       "name": "افشون",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl33.jpg",
-      "address": [
-        "mashhad"
-      ],
+      "address": ["mashhad"],
       "postId": 1
-    },
-    {
-      "name": "زهرا نجاتی",
-      "internetAddress": "jjjjj",
-      "city": [
-        "باغ بهادران",
-        "تيران"
-      ],
-      "agreements": true,
-      "id": 6
-    },
-    {
-      "name": "bbbbbbbbbbbbbbbbbbbbbbbbb",
-      "internetAddress": "xcvgcxv",
-      "city": [
-        "كرج",
-        "گلستان تهران"
-      ],
-      "agreements": true,
-      "id": 7
     }
   ],
   "dresses": [

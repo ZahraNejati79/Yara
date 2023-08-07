@@ -1,17 +1,21 @@
 import { useFormik } from "formik";
 import Input from "../common/Input";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-
-const initialValues = {
-  phoneNumber: "",
-  password: "",
-};
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../Features/Auth/authSlice";
 
 const LoginForm = () => {
+  const Navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [formInput, setFormInput] = useState({
+    phoneNumber: "",
+    password: "",
+  });
   const formik = useFormik({
-    initialValues,
-    onSubmit: (value) => console.log(value),
+    initialValues: formInput,
     onBlure: (value) => console.log(value),
     validationSchema: Yup.object({
       phoneNumber: Yup.string()
@@ -27,9 +31,20 @@ const LoginForm = () => {
     }),
     validateOnMount: true,
   });
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(loginUser(formik.values));
+    setFormInput({
+      phoneNumber: "",
+      password: "",
+    });
+    formik.resetForm();
+    toast.success("ورود شما با موفقیت انجام شد ");
+    Navigate("/");
+  };
   return (
     <form
-      onSubmit={formik.handleSubmit}
+      onSubmit={submitHandler}
       className="mb-8 bg-white border border-borderColor rounded-lg p-8 flex flex-col items-center justify-center gap-4"
       action="text"
     >
