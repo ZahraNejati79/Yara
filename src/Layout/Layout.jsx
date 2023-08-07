@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center mt-20 lg:mt-40">
+      <div className="flex items-center justify-center mt-4">
         <main className="container flex items-start justify-center ">
           {children}
         </main>
