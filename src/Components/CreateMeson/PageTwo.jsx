@@ -61,9 +61,13 @@ const PageTwo = () => {
           <Input
             formik={formik}
             name="internetAddress"
-            label="آدرس اینترنتی مزونت چی باشه؟"
+            label="آدرس مزونت کجاست ؟"
           />
-          <SelectedCities formik={formik} handleSetCity={handleSetCity} />
+          <SelectedCities
+            label="مزونت داخل چه شهری قرار داره؟"
+            formik={formik}
+            handleSetCity={handleSetCity}
+          />
 
           <div className="w-72 md:w-96">
             <input
@@ -92,7 +96,7 @@ const PageTwo = () => {
             تایید و ادامه
           </button>
         </form>
-        <div className="w-96 order-1 bg-infoCard border border-borderColor p-4">
+        <div className="w-96 order-1 bg-hoverColor border border-borderColor p-4">
           <h2 className="font-bold mb-2">راهنمای انتخاب نام مزون</h2>
           <h3 className="mb-2">
             رعایت این موارد می‌تونه به افزایش دیده شدنت کمک کنه:
