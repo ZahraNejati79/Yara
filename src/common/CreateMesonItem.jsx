@@ -17,9 +17,9 @@ const CreateMesonItem = ({
     <div
       className={`rounded-lg p-4 flex items-center justify-between w-full md:w-4/5 border ${
         createMesonStep >= step
-          ? "border-borderPrimary bg-bgPrimary"
+          ? "border-primary bg-bgPrimary"
           : "border-textSecondary bg-white text-textSecondary"
-      } ${enable && "border-borderPrimary bg-white "} `}
+      } ${enable && "border-primary bg-white "} `}
     >
       <div className="flex flex-col items-start justify-center gap-4">
         <div className={enable && "font-bold"}>{label}</div>
@@ -27,7 +27,7 @@ const CreateMesonItem = ({
           <div className="flex flex-col items-start justify-center gap-3">
             <div>{description}</div>
             <Link className="self-end" to={to}>
-              <button className="border-2 border-borderPrimary text-borderPrimary bg-white hover:bg-bgPrimary p-2 rounded-md font-bold text-sm ">
+              <button className="border-2 border-primary text-primary bg-white hover:bg-bgPrimary p-2 rounded-md font-bold text-sm ">
                 {label}
               </button>
             </Link>
@@ -35,7 +35,7 @@ const CreateMesonItem = ({
         )}
       </div>
       {createMesonStep > step && (
-        <div className="text-sm text-borderPrimary">
+        <div className="text-sm text-primary">
           <Done />
           <span className="px-1"> انجام شد</span>
         </div>

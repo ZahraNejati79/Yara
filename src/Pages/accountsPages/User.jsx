@@ -27,7 +27,7 @@ const User = () => {
             </div>
           </Link>
           <div className="flex items-center justify-start gap-4">
-            <div className="w-20 h-20 rounded-full bg-[#d8d8f7]"></div>
+            <div className="w-20 h-20 rounded-full bg-hoverColor"></div>
             <span>زهرا نجاتی</span>
           </div>
         </div>
@@ -38,7 +38,7 @@ const User = () => {
       <section className="hidden md:flex bg-white p-4 text-lg text">
         <div className="w-full">
           <div className="flex items-center justify-start gap-4 border-b border-b-borderColor pb-4">
-            <div className="h-12 w-12 rounded-full bg-[#d8d8f7]"></div>
+            <div className="h-12 w-12 rounded-full bg-hoverColor"></div>
             <span>زهرا نجاتی</span>
           </div>
           <ul className="border-b border-b-borderColor pb-4">

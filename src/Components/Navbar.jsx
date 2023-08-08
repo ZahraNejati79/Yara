@@ -13,7 +13,6 @@ import { NavLink } from "react-router-dom";
 import { getUser } from "../Features/Auth/authSlice";
 
 const Navbar = () => {
-  const [clickBottomIcon, setClickBottomIcon] = useState(0);
   const user = useSelector(getUser);
   console.log("user :", user);
   return (
@@ -37,99 +36,70 @@ const Navbar = () => {
             <div className="lg:hidden text-xl md:text-2 lg:text-3xl font-bold italic text-primary">
               YaRa
             </div>
-            <div className="lg:hidden flex items-center ">
+            <div className="lg:hidden flex items-center gap-4">
               <NavLink to="/account/chat">
-                <IconButton className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center hover:text-primary">
                   <Grading className="text-3xl font-bold text-colorIcon" />
-                </IconButton>
+                </div>
               </NavLink>
               <NavLink to="/account/chat">
-                <IconButton className="flex flex-col items-center justify-center">
-                  <Storefront className="text-3xl font-bold text-colorIcon" />
-                </IconButton>
+                <div className="flex flex-col items-center justify-center">
+                  <Storefront className="text-3xl font-bold text-colorIcon hover:text-primary" />
+                </div>
               </NavLink>
             </div>
           </div>
-          <div className="hidden lg:flex ml-4 gap-x-4 items-center justify-center">
+          <div className="hidden lg:flex ml-4 gap-x-10 items-center justify-center">
             <NavLink to="/account/chat">
-              <IconButton className="flex flex-col items-center justify-center">
-                <ChatBubbleOutline className="text-3xl font-bold text-textPrimary" />
-                <Typography className="text-lg  text-textPrimary">
-                  گفتوگو
-                </Typography>
-              </IconButton>
+              <div className="flex flex-col items-center justify-center gap-2 text-textPrimary hover:text-primary">
+                <ChatBubbleOutline className="text-3xl" />
+                <div className="text-base cursor-pointer">گفتوگو</div>
+              </div>
             </NavLink>
             {user.id ? (
               <NavLink to="/profile">
-                <IconButton className="flex flex-col items-center justify-center">
-                  <PermIdentity className="text-3xl font-bold text-textPrimary" />
-                  <Typography className="text-lg text-textPrimary">
-                    پروفایل
-                  </Typography>
-                </IconButton>
+                <div className="flex flex-col items-center justify-center gap-2 text-textPrimary hover:text-primary ">
+                  <PermIdentity className="text-3xl" />
+                  <div className="text-base cursor-pointer">پروفایل</div>
+                </div>
               </NavLink>
             ) : (
               <NavLink to="/login">
-                <IconButton className="flex flex-col items-center justify-center">
-                  <Login className="text-3xl font-bold text-textPrimary" />
-                  <Typography className="text-lg text-textPrimary">
-                    ورود
-                  </Typography>
-                </IconButton>
+                <div className="flex flex-col items-center justify-center gap-2 text-textPrimary hover:text-primary ">
+                  <Login className="text-3xl" />
+                  <div className="text-base cursor-pointer">ورود</div>
+                </div>
               </NavLink>
             )}
           </div>
         </div>
         <Toolbar className="hidden lg:flex  items-center justify-start w-full gap-x-8 ">
-          <Typography
-            onClick={() => setClickBottomIcon(1)}
-            className={
-              clickBottomIcon === 1
-                ? "text-primary text-xl font-bold cursor-pointer"
-                : "text-xl font-bold cursor-pointer text-textPrimary"
-            }
-          >
+          <NavLink to="/">
+            <div className="hover:text-primary text-textPrimary text-lg font-bold cursor-pointer">
+              خانه
+            </div>
+          </NavLink>
+          <div className="hover:text-primary text-textPrimary text-lg font-bold cursor-pointer">
             دسته بندی
-          </Typography>
+          </div>
 
           {user.type === "meson" ? (
             <NavLink to="/dashboard">
-              <Typography
-                onClick={() => setClickBottomIcon(2)}
-                className={
-                  clickBottomIcon === 2
-                    ? "text-primary text-xl font-bold cursor-pointer"
-                    : "text-xl font-bold cursor-pointer text-textPrimary"
-                }
-              >
+              <div className="hover:text-primary text-textPrimary text-lg font-bold cursor-pointer">
                 مدیریت مزون
-              </Typography>
+              </div>
             </NavLink>
           ) : (
             <NavLink to={user.id ? "/create-meson" : "/login"}>
-              <Typography
-                onClick={() => setClickBottomIcon(3)}
-                className={
-                  clickBottomIcon === 3
-                    ? "text-primary text-xl font-bold cursor-pointer"
-                    : "text-xl font-bold cursor-pointer text-textPrimary"
-                }
-              >
+              <div className="hover:text-primary text-textPrimary text-lg font-bold cursor-pointer">
                 ایجاد مزون
-              </Typography>
+              </div>
             </NavLink>
           )}
           <NavLink to="/discovery">
-            <Typography
-              onClick={() => setClickBottomIcon(3)}
-              className={
-                clickBottomIcon === 3
-                  ? "text-primary text-xl font-bold cursor-pointer"
-                  : "text-xl font-bold cursor-pointer text-textPrimary"
-              }
-            >
+            <div className="hover:text-primary text-textPrimary text-lg font-bold cursor-pointer">
               مزون گردی
-            </Typography>
+            </div>
           </NavLink>
         </Toolbar>
       </Toolbar>

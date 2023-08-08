@@ -14,7 +14,16 @@ const ReviewSection = () => {
 
   return (
     <TabContext className="m-0" value={tabvalue}>
-      <TabList className="bg-white" onChange={handleChange}>
+      <TabList
+        textColor="gray"
+        TabIndicatorProps={{
+          style: {
+            backgroundColor: "#e63c64bb",
+          },
+        }}
+        className="bg-white flex items-center justify-center"
+        onChange={handleChange}
+      >
         <Tab
           className="w-1/2 md:text-xl"
           label="در انتظار ثبت تجربه"
@@ -22,7 +31,7 @@ const ReviewSection = () => {
         />
         <Tab className="w-1/2 md:text-xl" label="تجربه های ثبت شده" value="2" />
       </TabList>
-      <TabPanel className="mt-2 p-0 " value="1">
+      <TabPanel className="mt-2 p-0" value="1">
         <Unreview />
       </TabPanel>
       <TabPanel className="mt-2 p-0" value="2">
