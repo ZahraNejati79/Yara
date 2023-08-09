@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getUser } from "../Features/Auth/authSlice";
+import { isEmptyObject } from "../common/isEmptyObject";
 
 const BottomBar = () => {
   const user = useSelector(getUser);
@@ -28,7 +29,7 @@ const BottomBar = () => {
             <Typography>گفتوگو</Typography>
           </IconButton>
         </Link>
-        {user.id ? (
+        {!isEmptyObject(user) ? (
           <Link to="/profile">
             <IconButton className="text-colorIcon flex flex-col items-center justify-center">
               <Person className="hover:text-primary" />

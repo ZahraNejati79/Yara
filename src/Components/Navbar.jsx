@@ -6,11 +6,12 @@ import {
   Search,
   Storefront,
 } from "@mui/icons-material";
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-import { useState } from "react";
+import { AppBar, Toolbar } from "@mui/material";
+
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getUser } from "../Features/Auth/authSlice";
+import { isEmptyObject } from "../common/isEmptyObject";
 
 const Navbar = () => {
   const user = useSelector(getUser);
@@ -56,7 +57,7 @@ const Navbar = () => {
                 <div className="text-base cursor-pointer">گفتوگو</div>
               </div>
             </NavLink>
-            {user.id ? (
+            {!isEmptyObject(user) ? (
               <NavLink to="/profile">
                 <div className="flex flex-col items-center justify-center gap-2 text-textPrimary hover:text-primary ">
                   <PermIdentity className="text-3xl" />
@@ -83,14 +84,14 @@ const Navbar = () => {
             دسته بندی
           </div>
 
-          {user.type === "meson" ? (
+          {user.type == "meson" ? (
             <NavLink to="/dashboard">
               <div className="hover:text-primary text-textPrimary text-lg font-bold cursor-pointer">
                 مدیریت مزون
               </div>
             </NavLink>
           ) : (
-            <NavLink to={user.id ? "/create-meson" : "/login"}>
+            <NavLink to={!isEmptyObject(user) ? "/create-meson" : "/login"}>
               <div className="hover:text-primary text-textPrimary text-lg font-bold cursor-pointer">
                 ایجاد مزون
               </div>

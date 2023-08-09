@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
-import { getUser } from "../Features/Auth/authSlice";
+import { editUser, getUser } from "../Features/Auth/authSlice";
 
 const EditAccount = () => {
   const user = useSelector(getUser);
@@ -30,19 +30,19 @@ const EditAccount = () => {
   });
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
-
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
         setSelectedImage(e.target.result);
       };
       reader.readAsDataURL(file);
+      formik.setFieldValue("dirty", true);
     }
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // dispatch(editUser(formik.values));
+    dispatch(editUser(formik.values));
     setFormInput({
       firstName: "",
       lastName: "",
