@@ -52,7 +52,7 @@ const Account = () => {
             label="تغییر موقعیت مکانی"
           />
           <NavigationItem
-            to="/account/settings"
+            to="/account/edit"
             icon={<Settings />}
             label="تنظیمات"
           />

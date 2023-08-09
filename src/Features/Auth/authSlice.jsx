@@ -37,6 +37,8 @@ const authSlice = createSlice({
           id: 2,
           firstName: "زهرا",
           lastName: "نجاتی",
+          phoneNumber: "09333632654",
+          password: "3333333",
           type: "meson",
         };
         state.error = null;
@@ -59,6 +61,8 @@ const authSlice = createSlice({
           id: 2,
           firstName: "زهرا",
           lastName: "نجاتی",
+          phoneNumber: "09333632654",
+          password: "3333333",
           type: "meson",
         };
         state.error = null;
