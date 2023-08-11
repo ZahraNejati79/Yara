@@ -1,13 +1,15 @@
 import { useState } from "react";
-import Input from "../../../common/Input";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Rating } from "@mui/material";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { postComment } from "../../../Features/Comment/commentSlice";
 const Unreview = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedDress, setSelectedDress] = useState(null);
+  const dispatch = useDispatch();
   const dressUnreview = [
     {
       id: 1,
@@ -62,6 +64,7 @@ const Unreview = () => {
     setShowModal(true);
     formik.resetForm();
     setSelectedDress(dress);
+    console.log("dsfdsf", formik);
   };
   const formik = useFormik({
     initialValues: formInput,
@@ -74,7 +77,11 @@ const Unreview = () => {
   });
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(formik.values);
+    dispatch(
+      postComment({
+        ...formik.values,
+      })
+    );
     setFormInput({
       clothesId: null,
       text: "",
@@ -141,6 +148,7 @@ const Unreview = () => {
                           name="rtl-rating"
                           value={formik.values.rate}
                           {...formik.getFieldProps("rate")}
+                          className="text-primary"
                         />
                       </ThemeProvider>
                       {formik.errors.rate && formik.touched.rate && (

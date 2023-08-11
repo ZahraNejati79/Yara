@@ -33,7 +33,7 @@ const DressDetail = () => {
 
   return (
     <section className="flex flex-col md:grid md:grid-cols-[minmax(850px,_1fr)_425px] gap-8">
-      <div className="md:col-span-1 flex flex-col">
+      <div className="md:col-span-1 flex flex-col ">
         <div className="grid grid-cols-1 md:flex md:items-start md:justify-start md:gap-8 bg-white h-[30rem] rounded-lg overflow-hidden">
           <div className=" flex items-center justify-center max-w-96 h-full">
             <img

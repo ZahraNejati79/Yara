@@ -4,35 +4,47 @@
       "id": 1,
       "name": "زهرا",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl07.jpg",
-      "address": ["isfahan", "kashan"],
+      "address": [
+        "isfahan",
+        "kashan"
+      ],
       "postId": 1
     },
     {
       "id": 2,
       "name": "یاسی",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl20.jpg",
-      "address": ["tehran", ""],
+      "address": [
+        "tehran",
+        ""
+      ],
       "postId": 1
     },
     {
       "id": 3,
       "name": "بهار",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl23.jpg",
-      "address": ["mashhad"],
+      "address": [
+        "mashhad"
+      ],
       "postId": 1
     },
     {
       "id": 4,
       "name": "شبنم",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl24.jpg",
-      "address": ["Tabris"],
+      "address": [
+        "Tabris"
+      ],
       "postId": 1
     },
     {
       "id": 5,
       "name": "افشون",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl33.jpg",
-      "address": ["mashhad"],
+      "address": [
+        "mashhad"
+      ],
       "postId": 1
     }
   ],
@@ -373,6 +385,26 @@
       "lastName": "باقری",
       "rate": 3,
       "text": "رفتار مزون دار عالی بود"
+    },
+    {
+      "clothesId": null,
+      "text": "szdeszfdgfg",
+      "rate": "4",
+      "null": 1,
+      "id": 3
+    },
+    {
+      "clothesId": null,
+      "text": "هم لباس زیبا بود هم برخورد مزون دار عالی\nممنون از یارای عزیز",
+      "rate": "5",
+      "null": 3,
+      "id": 4
+    },
+    {
+      "clothesId": null,
+      "text": "چرا بیخودی نظر میدین \nاصلا لباس مثل تصویر نیست . و برخورد مزون دار اصلا خوب نبود",
+      "rate": "1",
+      "id": 5
     }
   ],
   "profile": {
