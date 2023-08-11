@@ -1,7 +1,7 @@
 import ProvinceList from "./ProvinceList";
 import { useState } from "react";
 
-const SelectedCities = ({ handleSetCity, cities, formik }) => {
+const SelectedCities = ({ handleSetCity, formik, label }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -10,7 +10,7 @@ const SelectedCities = ({ handleSetCity, cities, formik }) => {
         onClick={() => setShowModal(true)}
         className="gap-2 flex flex-col items-start justify-center "
       >
-        <label htmlFor="search">چه شهرایی هستید؟</label>
+        <label htmlFor="search">{label}</label>
         <input
           {...formik.getFieldProps("city")}
           className="outline-none w-72 md:w-96 bg-gray-50 border border-borderColor text-textPrimary text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5"

@@ -4,7 +4,8 @@ module.exports = {
   important: "#root",
   theme: {
     colors: {
-      primary: "#647dff",
+      primary: "#e63c64bb",
+      hoverColor: "#ffdde5cf",
       secondary: "#f5f5f5",
       white: "#ffffff",
       textPrimary: "#282828",
@@ -12,7 +13,7 @@ module.exports = {
       "text-base": "white",
       borderColor: "#e1e1e1",
       borderPrimary: "#3A49CF",
-      bgPrimary: "#EFF0FB",
+      bgPrimary: "#fffdfdcf",
       error: "#e70000",
       infoCard: "#e0f4fe",
       colorIcon: "#666666",

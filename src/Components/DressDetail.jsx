@@ -6,20 +6,20 @@ import {
   getSelectedDress,
 } from "../Features/Dress/dressSlice";
 import { useParams } from "react-router-dom";
+import { Chat, LocationOn, Star } from "@mui/icons-material";
 import {
-  Chat,
-  LocationOn,
-  Room,
-  Star,
-  Storefront,
-  ThumbUpOffAlt,
-} from "@mui/icons-material";
+  fetchComments,
+  getAllComments,
+} from "../Features/Comment/commentSlice";
+import Comments from "./Comments";
 
 const DressDetail = () => {
   //   console.log("useParams", useParams());
+
   const { dressId } = useParams();
   const dispatch = useDispatch();
   const selectedDress = useSelector(getSelectedDress);
+  const comments = useSelector(getAllComments);
   const shopKeeper = {
     firstName: "مریم ",
     lastName: "شوقی",
@@ -28,11 +28,12 @@ const DressDetail = () => {
   };
   useEffect(() => {
     dispatch(fetchAsyncSelectedDress(dressId));
+    dispatch(fetchComments());
   }, [dispatch]);
 
   return (
     <section className="flex flex-col md:grid md:grid-cols-[minmax(850px,_1fr)_425px] gap-8">
-      <div className="md:col-span-1 flex flex-col">
+      <div className="md:col-span-1 flex flex-col ">
         <div className="grid grid-cols-1 md:flex md:items-start md:justify-start md:gap-8 bg-white h-[30rem] rounded-lg overflow-hidden">
           <div className=" flex items-center justify-center max-w-96 h-full">
             <img
@@ -93,6 +94,7 @@ const DressDetail = () => {
           </button>
         </div>
       </div>
+      <Comments comments={comments} />
     </section>
   );
 };
