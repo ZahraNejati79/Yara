@@ -6,20 +6,20 @@ import {
   getSelectedDress,
 } from "../Features/Dress/dressSlice";
 import { useParams } from "react-router-dom";
+import { Chat, LocationOn, Star } from "@mui/icons-material";
 import {
-  Chat,
-  LocationOn,
-  Room,
-  Star,
-  Storefront,
-  ThumbUpOffAlt,
-} from "@mui/icons-material";
+  fetchComments,
+  getAllComments,
+} from "../Features/Comment/commentSlice";
+import Comments from "./Comments";
 
 const DressDetail = () => {
   //   console.log("useParams", useParams());
+
   const { dressId } = useParams();
   const dispatch = useDispatch();
   const selectedDress = useSelector(getSelectedDress);
+  const comments = useSelector(getAllComments);
   const shopKeeper = {
     firstName: "مریم ",
     lastName: "شوقی",
@@ -28,6 +28,7 @@ const DressDetail = () => {
   };
   useEffect(() => {
     dispatch(fetchAsyncSelectedDress(dressId));
+    dispatch(fetchComments());
   }, [dispatch]);
 
   return (
@@ -93,6 +94,7 @@ const DressDetail = () => {
           </button>
         </div>
       </div>
+      <Comments comments={comments} />
     </section>
   );
 };
