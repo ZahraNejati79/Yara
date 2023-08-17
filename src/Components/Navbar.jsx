@@ -84,7 +84,7 @@ const Navbar = () => {
             دسته بندی
           </div>
 
-          {user.type == "meson" ? (
+          {user == "meson" ? (
             <NavLink to="/dashboard">
               <div className="hover:text-primary text-textPrimary text-lg font-bold cursor-pointer">
                 مدیریت مزون

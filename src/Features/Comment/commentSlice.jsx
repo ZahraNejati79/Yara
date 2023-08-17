@@ -10,7 +10,8 @@ const initialState = {
 export const postComment = createAsyncThunk(
   "comment/postComment",
   async (commentData) => {
-    const response = await http.post("/comments", commentData);
+    console.log(commentData);
+    const response = await http.post("/api/v1/comment/create", commentData);
     return response.data;
   }
 );
@@ -26,10 +27,10 @@ export const commentSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(postComment.pending, (state, action) => {
+      .addCase(postComment.pending, (state) => {
         state.loading = true;
       })
-      .addCase(postComment.fulfilled, (state, action) => {
+      .addCase(postComment.fulfilled, (state) => {
         state.loading = false;
         state.error = null;
       })

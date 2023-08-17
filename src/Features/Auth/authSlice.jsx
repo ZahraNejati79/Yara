@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { loginService } from "../../Services/loginService";
+import { signupSerevice } from "../../Services/signupService";
+import { toast } from "react-toastify";
 const initialState = {
   user: {},
   loading: false,
@@ -9,12 +11,14 @@ const initialState = {
 const LOCAL_STORAGE_AUTH_KEY = "authState";
 
 export const signupUser = createAsyncThunk("user/signup", async (userData) => {
-  const response = await signupUser(userData);
+  console.log("userData", userData);
+  const response = await signupSerevice(userData);
   return response.data;
 });
 
 export const loginUser = createAsyncThunk("user/login", async (userData) => {
-  const response = await loginUser(userData);
+  console.log("userData", userData);
+  const response = await loginService(userData);
   localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, response.data);
   return response.data;
 });
@@ -36,29 +40,25 @@ const authSlice = createSlice({
       .addCase(signupUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
+        toast.success("ثبت نام شما با موفقیت انجام شد ");
       })
       .addCase(signupUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
+        toast.error("ثبت نام ناموفق ");
       })
       .addCase(loginUser.pending, (state) => {
         state.loading = true;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
-        // state.user = action.payload;
-        state.user = {
-          id: 2,
-          firstName: "زهرا",
-          lastName: "نجاتی",
-          phoneNumber: "09333632654",
-          password: "3333333",
-          type: "meson",
-        };
+        state.user = action.payload;
+        toast.success("ورود شما با موفقیت انجام شد ");
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
+        toast.error("ورود ناموفق ");
       })
       .addCase(editUser.pending, (state) => {
         state.loading = true;
@@ -66,11 +66,12 @@ const authSlice = createSlice({
       .addCase(editUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
-        console.log("accccc", action.payload);
+        toast.success("پروفایل شما با موفقیت آپدیت شد ");
       })
       .addCase(editUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
+        toast.error(" آپدیت ناموفق ");
       });
   },
 });

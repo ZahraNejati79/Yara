@@ -56,7 +56,7 @@ const Unreview = () => {
   });
 
   const [formInput, setFormInput] = useState({
-    clothesId: null,
+    clothes_id: 1,
     text: "",
     rate: 0,
   });
@@ -83,7 +83,7 @@ const Unreview = () => {
       })
     );
     setFormInput({
-      clothesId: null,
+      clothes_id: null,
       text: "",
       rate: 0,
     });

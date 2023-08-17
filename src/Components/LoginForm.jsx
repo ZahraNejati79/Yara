@@ -2,7 +2,6 @@ import { useFormik } from "formik";
 import Input from "../common/Input";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import { toast } from "react-toastify";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../Features/Auth/authSlice";
@@ -11,14 +10,14 @@ const LoginForm = () => {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
   const [formInput, setFormInput] = useState({
-    phoneNumber: "",
+    mobile: "",
     password: "",
   });
   const formik = useFormik({
     initialValues: formInput,
     onBlure: (value) => console.log(value),
     validationSchema: Yup.object({
-      phoneNumber: Yup.string()
+      mobile: Yup.string()
         .matches(
           /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
           "تلفن همراه وارد شده نامعتبر است :("
@@ -33,13 +32,13 @@ const LoginForm = () => {
   });
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log(formik.values);
     dispatch(loginUser(formik.values));
     setFormInput({
-      phoneNumber: "",
+      mobile: "",
       password: "",
     });
     formik.resetForm();
-    toast.success("ورود شما با موفقیت انجام شد ");
     Navigate("/");
   };
   return (
@@ -53,7 +52,7 @@ const LoginForm = () => {
         <h2 className="font-bold text-xl mb-2 ">ورود</h2>
       </div>
 
-      <Input formik={formik} name="phoneNumber" label="تلفن همراه" />
+      <Input formik={formik} name="mobile" label="تلفن همراه" />
       <Input formik={formik} name="password" label="رمز عبور" type="password" />
       <button
         disabled={!formik.isValid}

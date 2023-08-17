@@ -1,5 +1,5 @@
 import http from "./Https";
 
-export const signupUser = (data) => {
-  return http.post("/auth/register", data);
+export const signupSerevice = (userData) => {
+  return http.post("api/v1/auth/register", userData);
 };
