@@ -11,7 +11,7 @@ export const postComment = createAsyncThunk(
   "comment/postComment",
   async (commentData) => {
     console.log(commentData);
-    const response = await http.post("/api/v1/comment/create", commentData);
+    const response = await http.post("/comments", commentData);
     return response.data;
   }
 );

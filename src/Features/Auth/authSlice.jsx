@@ -10,11 +10,14 @@ const initialState = {
 
 const LOCAL_STORAGE_AUTH_KEY = "authState";
 
-export const signupUser = createAsyncThunk("user/signup", async (userData) => {
-  console.log("userData", userData);
-  const response = await signupSerevice(userData);
-  return response.data;
-});
+export const signupUser = createAsyncThunk(
+  "user/register",
+  async (userData) => {
+    console.log("userData", userData);
+    const response = await signupSerevice(userData);
+    return response.data;
+  }
+);
 
 export const loginUser = createAsyncThunk("user/login", async (userData) => {
   console.log("userData", userData);

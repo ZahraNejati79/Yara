@@ -14,6 +14,7 @@ import CreateProductPage from "./Pages/CreateProductPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import EditAccountPage from "./Pages/accountsPages/EditAccountPage";
+import ChatPage from "./Pages/ChatPage";
 
 function App() {
   return (
@@ -24,7 +25,10 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/account/edit" element={<EditAccountPage />} />
+          <Route path="/account/chat" element={<ChatPage />} />
+
           <Route path="/user" element={<UserPage />} />
+
           <Route path="/discovery" element={<DiscoveryPage />} />
           <Route path="/discovery/:dressId" element={<DressDetailPage />} />
           <Route path="/create-meson" element={<CreateMesonPage />} />
