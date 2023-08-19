@@ -30,11 +30,12 @@ const DiscoveryPage = () => {
                       className="h-[15rem] md:h-[15rem] lg:h-[20rem] xl:h-[30rem] "
                       component="img"
                       height="140"
-                      image={dress.url}
+                      image={dress.primaryImage}
                       alt={dress.name}
                     />
+
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
+                      <Typography gutterBottom variant="div" component="div">
                         {dress.name}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">

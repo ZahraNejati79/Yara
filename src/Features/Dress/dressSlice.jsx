@@ -1,9 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import http from "../../Services/Https";
+import { toast } from "react-toastify";
 
 const initialState = {
+  loading: null,
+  dress: {},
   dresses: [],
   selectedDress: {},
+  error: false,
 };
 
 export const fetchAsyncDresses = createAsyncThunk(
@@ -22,27 +26,68 @@ export const fetchAsyncSelectedDress = createAsyncThunk(
   }
 );
 
+export const postDress = createAsyncThunk(
+  "/dresses/createDress",
+  async (dressData) => {
+    const response = await http.post("/dresses", dressData);
+    return response.data;
+  }
+);
+export const deleteDress = createAsyncThunk(
+  "/dresses/createDress",
+  async (dressId) => {
+    const response = await http.post(`dresses/${dressId}`);
+    return response.data;
+  }
+);
 export const dressSlice = createSlice({
   name: "dresses",
   initialState,
   extraReducers: {
-    [fetchAsyncDresses.pending]: () => {
-      console.log("dresses pending");
+    [fetchAsyncDresses.pending]: (state) => {
+      state.loading = true;
     },
-    [fetchAsyncDresses.fulfilled]: (state, { payload }) => {
-      return { ...state, dresses: payload };
+    [fetchAsyncDresses.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.dresses = action.payload;
     },
-    [fetchAsyncDresses.rejected]: () => {
-      console.log("dresses rejected");
+    [fetchAsyncDresses.rejected]: (state, action) => {
+      state.error = action.error.message;
+      state.loading = false;
     },
-    [fetchAsyncSelectedDress.pending]: () => {
-      console.log("selectedDress pending");
+    [fetchAsyncSelectedDress.pending]: (state) => {
+      state.loading = true;
     },
-    [fetchAsyncSelectedDress.fulfilled]: (state, { payload }) => {
-      return { ...state, selectedDress: payload };
+    [fetchAsyncSelectedDress.fulfilled]: (state, action) => {
+      state.selectedDress = action.payload;
+      state.loading = false;
     },
-    [fetchAsyncSelectedDress.rejected]: () => {
-      console.log("selectedDress rejected");
+    [fetchAsyncSelectedDress.rejected]: (state, action) => {
+      state.error = action.error.message;
+      state.loading = false;
+    },
+    [postDress.pending]: (state) => {
+      state.loading = true;
+    },
+    [postDress.fulfilled]: (state, action) => {
+      state.dress = action.payload;
+      state.loading = false;
+    },
+    [postDress.rejected]: (state, action) => {
+      state.error = action.error.message;
+      state.loading = false;
+    },
+    [deleteDress.pending]: (state) => {
+      state.loading = true;
+    },
+    [deleteDress.fulfilled]: (state) => {
+      state.loading = false;
+      toast.success("لباس با موفقیت حذف شد");
+    },
+    [deleteDress.rejected]: (state, action) => {
+      state.error = action.error.message;
+      state.loading = false;
+      toast.error("خطا در حذف لباس");
     },
   },
 });

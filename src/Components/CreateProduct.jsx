@@ -4,10 +4,13 @@ import * as Yup from "yup";
 import { useState } from "react";
 import { GiLargeDress } from "react-icons/gi";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { deleteDress, postDress } from "../Features/Dress/dressSlice";
+import { omit } from "lodash";
 
 const CreateProduct = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-
+  const dispatch = useDispatch();
   const handleSizeChange = (event) => {
     const { name, checked } = event.target;
     formik.setFieldValue(`sizes.${name}`, checked);
@@ -20,6 +23,9 @@ const CreateProduct = () => {
     primaryImage: selectedImage,
     material: "",
     color: "",
+    province: "تهران",
+    city: "اسلام‌شهر",
+    rate: 4.5,
     sizes: {
       S: false,
       M: false,
@@ -32,13 +38,10 @@ const CreateProduct = () => {
       L: "",
       XL: "",
     },
-    attributeIds: [],
-    variationValue: [],
   };
 
   const formik = useFormik({
     initialValues,
-
     validationSchema: Yup.object({
       name: Yup.string().required("نام لباس اجباری است."),
       description: Yup.string().required(
@@ -87,21 +90,15 @@ const CreateProduct = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    const attributeIds = [formik.values.material, formik.values.color];
-    formik.setFieldValue("attributeIds", attributeIds);
-    const variationValues = [];
-    Object.entries(formik.values.sizes).forEach(([size, selected]) => {
-      if (selected) {
-        variationValues.push({
-          value: size,
-          price: formik.values.price[size],
-          quantity: 1,
-        });
-      }
-    });
-    formik.setFieldValue("variationValues", variationValues);
     setSelectedImage(null);
-    console.log(formik);
+    const sizes = Object.keys(formik.values.sizes).filter(
+      (size) => formik.values.sizes[size]
+    );
+    const price = Math.max(
+      ...Object.values(formik.values.price).filter((value) => value !== "")
+    );
+    const newValues = omit(formik.values, ["sizes", "price"]);
+    dispatch(postDress({ ...newValues, sizes, price }));
     formik.resetForm();
     toast.success("لباس با موفقیت ثبت شد");
   };

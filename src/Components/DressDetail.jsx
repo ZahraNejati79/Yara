@@ -38,12 +38,12 @@ const DressDetail = () => {
           <div className=" flex items-center justify-center max-w-96 h-full">
             <img
               className="w-[10rem] min-h-1/2 md:w-[20rem] md:min-h-full "
-              src={selectedDress.url}
+              src={selectedDress.primaryImage}
               alt=""
             />
           </div>
           <div className="flex flex-col md:mt-8 md:mr-0 mr-8 gap-2">
-            <h2 className="mb-8">{selectedDress.descripteon}</h2>
+            <h2 className="mb-8">{selectedDress.description}</h2>
             <div>
               <span>
                 <Star />
