@@ -36,7 +36,7 @@ export const postDress = createAsyncThunk(
 export const deleteDress = createAsyncThunk(
   "/dresses/deleteDress",
   async (dressId) => {
-    const response = await http.post(`dresses/${dressId}`);
+    const response = await http.delete(`dresses/${dressId}`);
     return response.data;
   }
 );

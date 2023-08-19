@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import DashboardLayout from "../Layout/DashboardLayout";
 import { useDispatch, useSelector } from "react-redux";
-import http from "../Services/Https";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -18,9 +17,12 @@ const MyProductsPage = () => {
   const dresses = useSelector(getAllDresses);
   useEffect(() => {
     dispatch(fetchAsyncDresses());
+  }, []);
+
+  useEffect(() => {
     const filteredDress = dresses.filter((dress) => dress.mesonId == 6);
     setMyDress(filteredDress);
-  }, [dispatch]);
+  }, [dresses]);
 
   return (
     <DashboardLayout>
@@ -28,7 +30,7 @@ const MyProductsPage = () => {
         <div className="grid grid-cols-2  gap-2 ">
           {myDress.map((dress) => {
             return (
-              <Link to={`/dashboard/${dress.id}`}>
+              <Link to={`/myProducts/${dress.id}`}>
                 <Card sx={{ maxWidth: 345 }}>
                   <CardActionArea>
                     <CardMedia

@@ -4,55 +4,41 @@
       "id": 1,
       "name": "زهرا",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl07.jpg",
-      "address": [
-        "isfahan",
-        "kashan"
-      ],
+      "address": ["isfahan", "kashan"],
       "postId": 1
     },
     {
       "id": 2,
       "name": "یاسی",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl20.jpg",
-      "address": [
-        "tehran",
-        ""
-      ],
+      "address": ["tehran", ""],
       "postId": 1
     },
     {
       "id": 3,
       "name": "بهار",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl23.jpg",
-      "address": [
-        "mashhad"
-      ],
+      "address": ["mashhad"],
       "postId": 1
     },
     {
       "id": 4,
       "name": "شبنم",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl24.jpg",
-      "address": [
-        "Tabris"
-      ],
+      "address": ["Tabris"],
       "postId": 1
     },
     {
       "id": 5,
       "name": "افشون",
       "img": "https://www.soorban.com/images/news/2020/03/images/bl33.jpg",
-      "address": [
-        "mashhad"
-      ],
+      "address": ["mashhad"],
       "postId": 1
     },
     {
       "name": "یاسمن",
       "address": "تهران ، اسلامشهر جنب پاساژ گوهر",
-      "city": [
-        "اسلامشهر"
-      ],
+      "city": ["اسلامشهر"],
       "img": "https://img.freepik.com/free-photo/beautiful-wedding-bridal-dresses-mannequin-showroom-mall_169016-39170.jpg?w=996&t=st=1692440510~exp=1692441110~hmac=c37cb48bd0a2fc6cad42107472d81f7361dcad99ab394c591038690eef48d741",
       "agreements": true,
       "id": 6
@@ -356,76 +342,29 @@
       "province": "تهران",
       "city": "اسلام‌شهر",
       "rate": 4.5,
-      "L": [
-        "on"
-      ],
-      "XL": [
-        "on"
-      ],
-      "S": [
-        "on"
-      ],
-      "sizes": [
-        "S",
-        "L",
-        "XL"
-      ],
+      "L": ["on"],
+      "XL": ["on"],
+      "S": ["on"],
+      "sizes": ["S", "L", "XL"],
       "price": 4100,
       "id": 23
-    },
-    {
-      "name": "یاسمن",
-      "description": "بسیار سبک و نرم ",
-      "mesonId": null,
-      "categoryId": "2",
-      "primaryImage": null,
-      "material": "ساتن",
-      "color": "آبی",
-      "province": "تهران",
-      "city": "اسلام‌شهر",
-      "rate": 4.5,
-      "M": [
-        "on"
-      ],
-      "XL": [
-        "on"
-      ],
-      "sizes": [
-        "M",
-        "XL"
-      ],
-      "price": 2100,
-      "id": 24
     },
     {
       "name": "بهار",
       "description": "طرح دار و بسیار زیبا",
       "mesonId": 6,
       "categoryId": "3",
-      "primaryImage": null,
+      "primaryImage": "https://www.soorban.com/images/news/2023/07/1689157182_H7dN2.jpg",
       "material": "حریر",
       "color": "زرشکی",
       "province": "تهران",
       "city": "اسلام‌شهر",
       "rate": 4.5,
-      "S": [
-        "on"
-      ],
-      "M": [
-        "on"
-      ],
-      "L": [
-        "on"
-      ],
-      "XL": [
-        "on"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "S": ["on"],
+      "M": ["on"],
+      "L": ["on"],
+      "XL": ["on"],
+      "sizes": ["S", "M", "L", "XL"],
       "price": 5400,
       "id": 25
     },
@@ -434,18 +373,14 @@
       "description": "بسیار سبک و نرم ",
       "mesonId": 6,
       "categoryId": "2",
-      "primaryImage": null,
+      "primaryImage": "https://www.soorban.com/images/news/2023/07/1689157184_A2zY8.jpg",
       "material": "ساتن",
       "color": "سفید",
       "province": "تهران",
       "city": "اسلام‌شهر",
       "rate": 4.5,
-      "L": [
-        "on"
-      ],
-      "sizes": [
-        "L"
-      ],
+      "L": ["on"],
+      "sizes": ["L"],
       "price": 1400,
       "id": 26
     },
@@ -454,18 +389,14 @@
       "description": "طرح دار و بسیار زیبا",
       "mesonId": 6,
       "categoryId": "2",
-      "primaryImage": null,
+      "primaryImage": "https://www.soorban.com/images/news/2023/07/1689157208_O7yX2.jpg",
       "material": "ساتن",
       "color": "زرشکی",
       "province": "تهران",
       "city": "اسلام‌شهر",
       "rate": 4.5,
-      "M": [
-        "on"
-      ],
-      "sizes": [
-        "M"
-      ],
+      "M": ["on"],
+      "sizes": ["M"],
       "price": 1500,
       "id": 27
     },
@@ -474,18 +405,14 @@
       "description": "قشنگه بخرید",
       "mesonId": 6,
       "categoryId": "3",
-      "primaryImage": null,
+      "primaryImage": "https://www.soorban.com/images/news/2023/07/1689157199_K9fG9.jpg",
       "material": "ساتن",
       "color": "زرشکی",
       "province": "تهران",
       "city": "اسلام‌شهر",
       "rate": 4.5,
-      "M": [
-        "on"
-      ],
-      "sizes": [
-        "M"
-      ],
+      "M": ["on"],
+      "sizes": ["M"],
       "price": 1500,
       "id": 28
     },
@@ -494,18 +421,14 @@
       "description": "قشنگه بخرید",
       "mesonId": 6,
       "categoryId": "1",
-      "primaryImage": null,
+      "primaryImage": "https://www.soorban.com/images/news/2023/07/1689157204_Z3xM2.jpg",
       "material": "ساتن",
       "color": "زرشکی",
       "province": "تهران",
       "city": "اسلام‌شهر",
       "rate": 4.5,
-      "M": [
-        "on"
-      ],
-      "sizes": [
-        "M"
-      ],
+      "M": ["on"],
+      "sizes": ["M"],
       "price": 5100,
       "id": 29
     }

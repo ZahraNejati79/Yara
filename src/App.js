@@ -16,6 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 import EditAccountPage from "./Pages/accountsPages/EditAccountPage";
 import ChatPage from "./Pages/ChatPage";
 import MyProductsPage from "./Pages/MyProcuctsPage";
+import MyProductsDetailPage from "./Pages/MyProductsDetailPage";
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
           <Route path="/account/chat" element={<ChatPage />} />
           <Route path="/user" element={<UserPage />} />
           <Route path="/myProducts" element={<MyProductsPage />} />
+          <Route
+            path="/myProducts/:dressId"
+            element={<MyProductsDetailPage />}
+          />
           <Route path="/discovery" element={<DiscoveryPage />} />
           <Route path="/discovery/:dressId" element={<DressDetailPage />} />
           <Route path="/create-meson" element={<CreateMesonPage />} />
