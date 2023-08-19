@@ -22,7 +22,8 @@ export const deleteMeson = createAsyncThunk(
 export const mesonSlice = createSlice({
   name: "mesons",
   initialState: {
-    data: [],
+    meson: [],
+    myMeson: null,
     loading: false,
     error: null,
   },
@@ -34,7 +35,7 @@ export const mesonSlice = createSlice({
       })
       .addCase(fetchMeson.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload;
+        state.meson = action.payload;
         state.error = null;
       })
       .addCase(fetchMeson.rejected, (state, action) => {
@@ -46,7 +47,7 @@ export const mesonSlice = createSlice({
       })
       .addCase(postMeson.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload;
+        state.myMeson = action.payload;
         state.error = null;
       })
       .addCase(postMeson.rejected, (state, action) => {
@@ -57,4 +58,5 @@ export const mesonSlice = createSlice({
 });
 
 export default mesonSlice.reducer;
-export const getAllMesons = (state) => state.mesons.data;
+export const getAllMesons = (state) => state.mesons.meson;
+export const getMyMeson = (state) => state.mesons.myMeson;

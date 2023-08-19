@@ -34,9 +34,17 @@ const DashboardLayout = ({ children }) => {
         </div>
         <div>
           <NavigationItem to="/" icon={<Forum />} label="گفت‌وگو" />
-          <NavigationItem to="/" icon={<BorderAllOutlined />} label="محصولات" />
+          <NavigationItem
+            to="/myProducts"
+            icon={<BorderAllOutlined />}
+            label="محصولات"
+          />
           <NavigationItem to="/" icon={<GradingOutlined />} label="سفارشات" />
-          <NavigationItem to="/" icon={<Storefront />} label="تنظیمات مزون" />
+          <NavigationItem
+            to="/dashboard"
+            icon={<Storefront />}
+            label="تنظیمات مزون"
+          />
           <NavigationItem to="/" icon={<PeopleAltOutlined />} label="مشتریان" />
         </div>
       </section>

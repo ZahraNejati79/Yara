@@ -1,15 +1,18 @@
 import { useFormik } from "formik";
 import Input from "../common/Input";
 import * as Yup from "yup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GiLargeDress } from "react-icons/gi";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteDress, postDress } from "../Features/Dress/dressSlice";
 import { omit } from "lodash";
+import { getMyMeson } from "../Features/Meson/mesonSlice";
 
 const CreateProduct = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const myMeson = useSelector(getMyMeson);
+
   const dispatch = useDispatch();
   const handleSizeChange = (event) => {
     const { name, checked } = event.target;
@@ -98,9 +101,8 @@ const CreateProduct = () => {
       ...Object.values(formik.values.price).filter((value) => value !== "")
     );
     const newValues = omit(formik.values, ["sizes", "price"]);
-    dispatch(postDress({ ...newValues, sizes, price }));
+    dispatch(postDress({ ...newValues, sizes, price, mesonId: 6 }));
     formik.resetForm();
-    toast.success("لباس با موفقیت ثبت شد");
   };
 
   return (

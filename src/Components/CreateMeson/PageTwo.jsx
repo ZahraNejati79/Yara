@@ -5,13 +5,16 @@ import SelectedCities from "../../common/SelectedCity/SelectedCities";
 import { useDispatch } from "react-redux";
 import { postMeson } from "../../Features/Meson/mesonSlice";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PageTwo = () => {
+  const Navigate = useNavigate();
   const dispatch = useDispatch();
   const [formInput, setFormInput] = useState({
     name: "",
-    internetAddress: "",
+    address: "",
     city: [],
+    img: "https://img.freepik.com/free-photo/beautiful-wedding-bridal-dresses-mannequin-showroom-mall_169016-39170.jpg?w=996&t=st=1692440510~exp=1692441110~hmac=c37cb48bd0a2fc6cad42107472d81f7361dcad99ab394c591038690eef48d741",
     agreements: false,
   });
   const formik = useFormik({
@@ -19,7 +22,7 @@ const PageTwo = () => {
     onBlur: (value) => console.log(value),
     validationSchema: Yup.object({
       name: Yup.string().required("نام مزون اجباریه :("),
-      internetAddress: Yup.string().required("آدرس اینترنتی مزون الزامیه :("),
+      address: Yup.string().required("آدرس اینترنتی مزون الزامیه :("),
       city: Yup.array()
         .min(1, "حداقل باید یک شهر انتخاب کنید.")
         .required("شهر خودت را انتخاب کن :("),
@@ -33,14 +36,15 @@ const PageTwo = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("1111111111111");
+    dispatch(postMeson(formik.values));
     setFormInput({
       name: "",
-      internetAddress: "",
+      address: "",
       city: [],
+      img: "https://img.freepik.com/free-photo/beautiful-wedding-bridal-dresses-mannequin-showroom-mall_169016-39170.jpg?w=996&t=st=1692440510~exp=1692441110~hmac=c37cb48bd0a2fc6cad42107472d81f7361dcad99ab394c591038690eef48d741",
       agreements: false,
     });
-    dispatch(postMeson(formik.values));
+    Navigate("/dashboard");
     formik.resetForm();
   };
 
@@ -58,11 +62,7 @@ const PageTwo = () => {
             name="name"
             label="یه نام برای مزونت انتخاب کن "
           />
-          <Input
-            formik={formik}
-            name="internetAddress"
-            label="آدرس مزونت کجاست ؟"
-          />
+          <Input formik={formik} name="address" label="آدرس مزونت کجاست ؟" />
           <SelectedCities
             label="مزونت داخل چه شهری قرار داره؟"
             formik={formik}

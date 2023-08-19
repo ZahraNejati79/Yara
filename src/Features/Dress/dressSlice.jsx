@@ -34,7 +34,7 @@ export const postDress = createAsyncThunk(
   }
 );
 export const deleteDress = createAsyncThunk(
-  "/dresses/createDress",
+  "/dresses/deleteDress",
   async (dressId) => {
     const response = await http.post(`dresses/${dressId}`);
     return response.data;
@@ -72,6 +72,8 @@ export const dressSlice = createSlice({
     [postDress.fulfilled]: (state, action) => {
       state.dress = action.payload;
       state.loading = false;
+      console.log(action.payload);
+      toast.success("لباس با موفقیت ثبت شد");
     },
     [postDress.rejected]: (state, action) => {
       state.error = action.error.message;
@@ -94,3 +96,4 @@ export const dressSlice = createSlice({
 export default dressSlice.reducer;
 export const getAllDresses = (state) => state.dresses.dresses;
 export const getSelectedDress = (state) => state.dresses.selectedDress;
+export const getCreatedDress = (state) => state.dresses.dress;
